@@ -1,0 +1,26 @@
+jobs:
+  CloneRepo:
+    resources:
+      instance-type: C4
+    outputs:
+      repo:
+        type: volume
+    uses: git-checkout@v1
+    with:
+      url: https://github.com/tintinp/paperspace-test.git
+  Hello:
+    resources:
+      instance-type: C4
+    needs:
+      - CloneRepo
+    inputs:
+      stylegan2: CloneRepo.outputs.repo
+    outputs:
+      data:
+        type: volume
+    uses: script@v1
+    with:
+      script: |-
+        cd /inputs/repo
+        python hello.py
+      image: ubuntu:18.04

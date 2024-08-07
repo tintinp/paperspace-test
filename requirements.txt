@@ -1,0 +1,10 @@
+datasets==2.20.0
+lorem==0.1.1
+numpy==2.0.1
+pandas==2.2.2
+Pillow==10.4.0
+psutil==6.0.0
+pyarrow==17.0.0
+pyspark==3.5.1
+qdrant_client==1.10.1
+tqdm==4.66.4
